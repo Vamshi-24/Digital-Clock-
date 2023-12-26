@@ -1,0 +1,19 @@
+from tkinter import Tk
+from tkinter import Label
+import time
+
+root=Tk()
+root.title("Time")
+
+def present_time():
+    display_time=time.strftime("%I:%M:%S %p")
+    digi_clock.config(text=display_time)
+    digi_clock.after(10,present_time)
+
+
+digi_clock=Label(root, font=("Times New Roman",100),bg="black",fg="red")
+digi_clock.pack()
+
+present_time()
+
+root.mainloop()
